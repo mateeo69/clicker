@@ -38,11 +38,10 @@ function calcularprod(){
     for (contador = 0; contador < inventario.length; contador++){
         porsegundos += inventario[contador] * objetoProduce[contador];
     }
-    
 }
 //Esta funcion recoge cada elemento HTML para unirla con el javascript
 function render(){
-    document.getElementById("contador").innerHTML = objeto;
+    document.getElementById("contador").innerHTML = objeto, "galletas";
     document.getElementById("inventario").innerHTML = 
     `Cursores: ${inventario[0]}
     Abuelitas: ${inventario[1]}
