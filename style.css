@@ -1,3 +1,11 @@
+/* Reseteo de estilos */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal */
 .container{
     display:flex;
     justify-content: space-between;
@@ -56,11 +64,11 @@
     margin-left: 5px;
 }
 
-.informacion p {
-    margin: 5px 0;
-}
+    .informacion p {
+        margin: 5px 0;
+    }
 
-.informacion p span {
-    font-weight: bold;
-    color: rgb(240, 115, 66);
-}
+        .informacion p span {
+            font-weight: bold;
+            color: rgb(240, 115, 66);
+        }
