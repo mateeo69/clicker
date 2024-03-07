@@ -19,7 +19,7 @@ function comprar(objetito){
     }
     else{
         Swal.fire({
-            title: 'Problema Monetario',
+            title: 'Error',
             text: 'No tienes suficiente dinero para comprar esto.',
             icon: 'error',
             confirmButtonText: 'Aceptar'
