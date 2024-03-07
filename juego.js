@@ -9,6 +9,10 @@ function clickObject(){
     objeto++;
 }
 
+function clickUpgrade(objetito){
+    inventario[objetito]++;
+}
+
 function comprar(objetito){
     if (objeto >= precioProducto[objetito]) {
         inventario[objetito]++; 
@@ -41,12 +45,13 @@ function calcularprod(){
 }
 //Esta funcion recoge cada elemento HTML para unirla con el javascript
 function render(){
-    document.getElementById("contador").innerHTML = objeto, "galletas";
+    document.getElementById("contador").innerHTML = `${objeto} barras de pan`;
     document.getElementById("inventario").innerHTML = 
     `Cursores: ${inventario[0]}
     Abuelitas: ${inventario[1]}
     Hornos: ${inventario[2]}`;
     document.getElementById("produccion").innerHTML =`Produccion por segundos: ${porsegundos}`;
+    document.getElementById("")
 }
 
 
