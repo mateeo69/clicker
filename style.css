@@ -1,17 +1,39 @@
-.ListaCajas {
-    display: flex;
-    flex-direction: column; /* Alinea las cajas verticalmente */
-    align-items: flex-end; /* Alinea las cajas a la derecha */
-    justify-content: flex-start;
+.container{
+    display:flex;
+    justify-content: space-between;
+    margin-right: 45px;
+    margin-top: 20px;
+    margin-left:45px;
 }
-
+.left{
+    width:200px;
+    height: 277px;
+}
+.right{
+    width: 200px;
+    display:flex;
+    flex-direction: column;
+}
 .caja {
     border: 3px solid #ccc;
     padding: 2px;
     width: 200px;
     display: flex;
     align-items: center;
-    align-self: flex-start;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#contador{
+    display: flex;
+    justify-content: center;
+}
+#rueda{
+    margin-left: 25px;
 }
 
 .informacion {

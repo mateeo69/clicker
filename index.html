@@ -14,13 +14,14 @@
 <body>
     <!-- Contenedor principal -->
     <div class="container">
+        <section class="left">
         <!-- Contenedor para la parte principal del juego -->
         <div class="main">
             <h1 id="contador"></h1>
-            <img src="img/Pan.png" width="250" height="200" onclick="clickObject()"/>
+            <img id="rueda" src="img/rueda.png" width="150" height="150" onclick="clickObject()"/>
         </div>
         <!-- Contenedor para la parte derecha del juego (mejoras) -->
-        <div class="right">
+        <div class="derecha">
             <!-- Botones para comprar mejoras -->
             <button onclick="comprar(0)">Cursor</button>
             <button onclick="comprar(1)">Abuelita</button>
@@ -31,10 +32,12 @@
             <div id="produccion"></div>
         </div>
         <!-- Contenedor para la parte izquierda del juego (opcional) -->
-        <div class="left">
+        <div class="izquierda">
             <!-- Aquí puedes agregar más elementos según sea necesario -->
         </div>
-        
+    </section>
+    
+    <section class="right">
         <div class="ListaCajas">
             <div class="caja">
                 <img src="img/cursor.png" width="50" onclick="comprar(0)">
@@ -43,7 +46,22 @@
                     <p>Producción: <span id="produccionCursor"></span> punto/s</p>
                 </div>
             </div>
+            <div class="caja">
+                <img src="img/gas.png" width="50" onclick="comprar(1)">
+                <div class="informacion">
+                    <p>Costo: <span id="costoGasolina"></span> puntos</p>
+                    <p>Producción: <span id="produccionGasolina"></span> punto/s</p>
+                </div>
+            </div>
+            <div class="caja">
+                <img src="img/cursor.png" width="50" onclick="comprar(2)">
+                <div class="informacion">
+                    <p>Costo: <span id="costoCursor"></span> puntos</p>
+                    <p>Producción: <span id="produccionCursor"></span> punto/s</p>
+                </div>
+            </div>
         </div>
+    </section>
     </div>
 </body>
 </html>

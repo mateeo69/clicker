@@ -21,6 +21,7 @@ function comprar(objetito){
         // Llama a calcularProd para actualizar porsegundos correctamente
         calcularprod();
     }
+
     else{
         Swal.fire({
             title: 'Error',
@@ -43,19 +44,20 @@ function calcularprod(){
         porsegundos += inventario[contador] * objetoProduce[contador];
     }
 }
+
 //Esta funcion recoge cada elemento HTML para unirla con el javascript
 function render(){
-    document.getElementById("contador").innerHTML = `${objeto} barras de pan`;
+    document.getElementById("contador").innerHTML = `${objeto} km/h`;
     document.getElementById("inventario").innerHTML = 
     `Cursores: ${inventario[0]}
     Abuelitas: ${inventario[1]}
     Hornos: ${inventario[2]}`;
     document.getElementById("produccion").innerHTML =`Produccion por segundos: ${porsegundos}`;
     document.getElementById("costoCursor").innerHTML = precioProducto[0];
+    document.getElementById("costoGasolina").innerHTML = precioProducto[1];
+    document.getElementById("produccionGasolina").innerHTML = precioProducto[2];
     document.getElementById("produccionCursor").innerHTML = objetoProduce[0];
 }
-
-
 
 //Función extraña para que vaya refrescando el videojuego
 var FPS = 30;
