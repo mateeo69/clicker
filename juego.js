@@ -51,7 +51,8 @@ function render(){
     Abuelitas: ${inventario[1]}
     Hornos: ${inventario[2]}`;
     document.getElementById("produccion").innerHTML =`Produccion por segundos: ${porsegundos}`;
-    document.getElementById("")
+    document.getElementById("costoCursor").innerHTML = precioProducto[0];
+    document.getElementById("produccionCursor").innerHTML = objetoProduce[0];
 }
 
 
