@@ -42,7 +42,6 @@ function render(){
     document.getElementById("produccion").innerHTML =`Produccion por segundos: ${porsegundos}`;
 }
 
-VAVAVA
 
 
 //Función extraña para que vaya refrescando el videojuego
