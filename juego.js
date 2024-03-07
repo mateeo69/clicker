@@ -17,6 +17,14 @@ function comprar(objetito){
         // Llama a calcularProd para actualizar porsegundos correctamente
         calcularprod();
     }
+    else{
+        Swal.fire({
+            title: 'Problema Monetario',
+            text: 'No tienes suficiente dinero para comprar esto.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
+    }
 }
 
 function producirauto(){
