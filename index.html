@@ -22,10 +22,6 @@
         </div>
         <!-- Contenedor para la parte derecha del juego (mejoras) -->
         <div class="derecha">
-            <!-- Botones para comprar mejoras -->
-            <button onclick="comprar(0)">Cursor</button>
-            <button onclick="comprar(1)">Abuelita</button>
-            <button onclick="comprar(2)">Horno</button>
             <!-- Área para mostrar el inventario -->
             <div id="inventario"></div>
             <!-- Área para mostrar la producción -->
@@ -38,7 +34,7 @@
     </section>
     
     <section class="right">
-        <div class="ListaCajas">
+        <div id="listaCajas">
             <div class="caja">
                 <img src="img/cursor.png" width="50" onclick="comprar(0)">
                 <div class="informacion">
@@ -54,10 +50,10 @@
                 </div>
             </div>
             <div class="caja">
-                <img src="img/cursor.png" width="50" onclick="comprar(2)">
+                <img src="img/engine.png" width="50" onclick="comprar(2)">
                 <div class="informacion">
-                    <p>Costo: <span id="costoCursor"></span> puntos</p>
-                    <p>Producción: <span id="produccionCursor"></span> punto/s</p>
+                    <p>Costo: <span id="costoEngine"></span> puntos</p>
+                    <p>Producción: <span id="produccionEngine"></span> punto/s</p>
                 </div>
             </div>
         </div>

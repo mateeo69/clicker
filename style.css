@@ -3,21 +3,37 @@
     justify-content: space-between;
     margin-right: 45px;
     margin-top: 20px;
-    margin-left:45px;
+    margin-left: 70px;
 }
 .left{
     width:200px;
     height: 277px;
 }
+#inventario{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+#produccion{
+    width: 400px;
+    display: flex;
+    margin-top: 30px;
+    margin-left: 30px;
+}
 .right{
     width: 200px;
+    margin-top: 25px;
     display:flex;
     flex-direction: column;
+    margin-right: 190px;
 }
+
 .caja {
     border: 3px solid #ccc;
     padding: 2px;
-    width: 200px;
+    margin-bottom: 5px;
+    width: 300px;
     display: flex;
     align-items: center;
 }
@@ -37,7 +53,7 @@
 }
 
 .informacion {
-    margin-left: 1px;
+    margin-left: 5px;
 }
 
 .informacion p {

@@ -54,9 +54,11 @@ function render(){
     Hornos: ${inventario[2]}`;
     document.getElementById("produccion").innerHTML =`Produccion por segundos: ${porsegundos}`;
     document.getElementById("costoCursor").innerHTML = precioProducto[0];
-    document.getElementById("costoGasolina").innerHTML = precioProducto[1];
-    document.getElementById("produccionGasolina").innerHTML = precioProducto[2];
     document.getElementById("produccionCursor").innerHTML = objetoProduce[0];
+    document.getElementById("costoGasolina").innerHTML = precioProducto[1];
+    document.getElementById("produccionGasolina").innerHTML = objetoProduce[1];
+    document.getElementById("costoEngine").innerHTML = precioProducto[2];
+    document.getElementById("produccionEngine").innerHTML = objetoProduce[2];
 }
 
 //Función extraña para que vaya refrescando el videojuego
