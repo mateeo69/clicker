@@ -164,9 +164,9 @@ function render(){
 
     //Informacion productos
     document.getElementById("inventario").innerHTML = 
-    `Tela: ${inventario[0]}\n
-    Camisetas: ${inventario[1]}\n
-    €: ${inventario[2]}`;
+    `Cursores: ${inventario[0]}\n
+    Gasolina: ${inventario[1]}\n
+    Motores: ${inventario[2]}`;
 }
 
 //Función extraña para que vaya refrescando el videojuego
