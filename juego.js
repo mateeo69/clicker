@@ -24,10 +24,23 @@ function comprar(objetito){
 
     else{
         Swal.fire({
-            title: 'Error',
-            text: 'No tienes suficiente dinero para comprar esto.',
+            position: 'bottom',
+            title: 'No tienes suficiente dinero para comprar esto.',
             icon: 'error',
-            confirmButtonText: 'Aceptar'
+            toast: true,
+            showConfirmButton: false,
+            width:500,
+            timer: 1500,
+            timerProgressBar: true,
+            color: "#000000",
+            background: "#EAEAEA",
+            customClass: {
+                title: 'tituloAlerta'   
+            },
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
         });
     }
 }
@@ -45,13 +58,14 @@ function calcularprod(){
     }
 }
 
+
 //Esta funcion recoge cada elemento HTML para unirla con el javascript
 function render(){
     document.getElementById("contador").innerHTML = `${objeto} km/h`;
     document.getElementById("inventario").innerHTML = 
-    `Cursores: ${inventario[0]}
-    Abuelitas: ${inventario[1]}
-    Hornos: ${inventario[2]}`;
+    `Tela: ${inventario[0]}\n
+    Camisetas: ${inventario[1]}\n
+    €: ${inventario[2]}`;
     document.getElementById("produccion").innerHTML =`Produccion por segundos: ${porsegundos}`;
     document.getElementById("costoCursor").innerHTML = precioProducto[0];
     document.getElementById("produccionCursor").innerHTML = objetoProduce[0];
