@@ -18,9 +18,21 @@
     <main class="container">
         <section class="left">
             <!-- Contenedor para la parte principal del juego -->
-            <div class="main">
-                <h1 id="contador"></h1>
-                <img class="tela" src="img/tela.png" width="150" height="150" onclick="clickObject()"/>
+            <div class="productos">
+                <div class="tela">                
+                    <img class="telaImg" src="img/tela.png" width="150" height="150" onclick="clickObject()"/>
+                    <div class="telaInfo">
+                        <h1 id="contadorTela"></h1>
+                        <p id="produccionTela"></p>
+                    </div>
+                </div>
+                <div class="camiseta">                
+                    <img class="camisetaImg" src="img/tela.png" width="150" height="150" onclick="clickObject()"/>
+                    <div class="camisetaInfo">
+                        <h1 id="contadorCamiseta"></h1>
+                        <p id="produccionCamiseta"></p>
+                    </div>
+                </div>
             </div>
             <!-- Contenedor para la parte derecha del juego (mejoras) -->
             <div class="derecha">

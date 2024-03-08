@@ -1,15 +1,26 @@
-var objeto = 0;
-var objetoVista = 0;
+// Definicion de variables
+    //Tela
+var tela = 0;
+var telaVista = 0;
+var telaPorSegundo = 0;
+    //Camisetas
+var camiseta = 0;
+var camisetaVista = 0;
+var camisetaPorSegundo = 0;
+    //Dinero
+var dinero = 0;
+var dineroVista = 0;
+var dineroPorSegundo = 0;
 
 var inventario = [0,0,0];
 var objetoProduce = [0.1,5,10];
 var precioProducto = [10,50,100];
-var porsegundos = 0;
+
 
 
 function clickObject(){
-    objeto++;
-    objetoVista++;
+    tela++;
+    telaVista++;
 }
 
 function clickUpgrade(objetito){
@@ -17,9 +28,9 @@ function clickUpgrade(objetito){
 }
 
 function comprar(objetito){
-    if (objeto >= precioProducto[objetito]) {
+    if (tela >= precioProducto[objetito]) {
         inventario[objetito]++; 
-        objeto -= precioProducto[objetito];
+        tela -= precioProducto[objetito];
 
         // Llama a calcularProd para actualizar porsegundos correctamente y la cantidad
         calcularprod();
@@ -51,36 +62,48 @@ function comprar(objetito){
 
 function producirauto(){
     for(contador = 0; contador < inventario.length; contador++){
-        objeto += inventario[contador] * objetoProduce[contador];
+        tela += inventario[contador] * objetoProduce[contador];
         // Truncamos el objeto de la vista para que sea un numero entero sin decimales
-        objetoVista = Math.trunc(objeto)
+        telaVista = Math.trunc(tela)
     }
 }
 
 function calcularprod(){
-    porsegundos = 0;
+    //Calcular tela por segundos
+    telaPorSegundo = 0;
     for (contador = 0; contador < inventario.length; contador++){
-        porsegundos += inventario[contador] * objetoProduce[contador];
+        telaPorSegundo += inventario[contador] * objetoProduce[contador];
     }
     // Lo limitamos a un decimal
-    porsegundos = porsegundos.toFixed(1)
+    telaPorSegundo = telaPorSegundo.toFixed(1)
 }
 
 
 //Esta funcion recoge cada elemento HTML para unirla con el javascript
 function render(){
-    document.getElementById("contador").innerHTML = `${objetoVista} telas`;
-    document.getElementById("inventario").innerHTML = 
-    `Tela: ${inventario[0]}\n
-    Camisetas: ${inventario[1]}\n
-    €: ${inventario[2]}`;
-    document.getElementById("produccion").innerHTML =`Produccion por segundos: ${porsegundos}`;
+
+    //Tela
+    document.getElementById("contadorTela").innerHTML = `${telaVista} telas`;
+    document.getElementById("produccionTela").innerHTML =`${telaPorSegundo} tela / s`;
+
+    //Camisetas
+    document.getElementById("contadorCamiseta").innerHTML = `${camisetaVista} camisetas`;
+    document.getElementById("produccionCamiseta").innerHTML =`${camisetaPorSegundo} camiseta / s`;
+    //Dinero
+
+    //Costos
     document.getElementById("costoCursor").innerHTML = precioProducto[0];
     document.getElementById("produccionCursor").innerHTML = objetoProduce[0];
     document.getElementById("costoGasolina").innerHTML = precioProducto[1];
     document.getElementById("produccionGasolina").innerHTML = objetoProduce[1];
     document.getElementById("costoEngine").innerHTML = precioProducto[2];
     document.getElementById("produccionEngine").innerHTML = objetoProduce[2];
+
+    //Informacion productos
+    document.getElementById("inventario").innerHTML = 
+    `Tela: ${inventario[0]}\n
+    Camisetas: ${inventario[1]}\n
+    €: ${inventario[2]}`;
 }
 
 //Función extraña para que vaya refrescando el videojuego

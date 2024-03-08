@@ -9,13 +9,9 @@
 .container{
     display:flex;
     justify-content: space-between;
-    margin-right: 45px;
-    margin-top: 20px;
-    margin-left: 70px;
 }
 .left{
-    width:200px;
-    height: 277px;
+
 }
     #inventario{
         display: flex;
@@ -32,11 +28,9 @@
         margin-left: 30px;
     }
 .right{
-    width: 200px;
-    margin-top: 25px;
+    width: auto;
     display:flex;
     flex-direction: column;
-    margin-right: 190px;
 }
 
 .caja {
@@ -49,26 +43,38 @@
     cursor: pointer;
 }
 
-.main{
+/* Productos */
+
+.productos{
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#contador{
+/* Selector general de todos los hijos de productos */
+
+div.productos > div {
+    width: 100%;
     display: flex;
-    justify-content: center;
 }
 
-/*Propiedades de la img TELA */
-.tela{
-    margin-left: 25px;
-    transition: transform 0.2s ease; /* Agregamos una transición para que el cambio de escala sea suave */
-}
-/*Animación de click*/
-.tela:active {
-    transform: scale(0.9); /* Aplicamos una escala menor cuando se hace clic */
-}
+    div.productos > div > img {
+        transition: transform 0.2s ease;/* Agregamos una transición para que el cambio de escala sea suave */
+    }
+
+        div.productos > div > img:active {
+            transform: scale(0.9); /* Aplicamos una escala menor cuando se hace clic */
+        }
+
+    div.productos > div > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+/* */
 
 .informacion {
     margin-left: 5px;
