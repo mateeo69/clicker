@@ -10,9 +10,6 @@
     display:flex;
     justify-content: space-between;
 }
-.left{
-
-}
     #inventario{
         display: flex;
         flex-direction: column;

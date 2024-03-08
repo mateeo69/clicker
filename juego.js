@@ -18,10 +18,71 @@ var precioProducto = [10,50,100];
 
 
 
-function clickObject(){
+function clickTela(){
     tela++;
     telaVista++;
 }
+
+function clickCamiseta(){
+    if(tela>=5){
+        tela -= 5;
+        camiseta++;
+        camisetaVista++;
+        //Hay que mejorar esto para que se actualice automático
+    }
+    else{
+        Swal.fire({
+            position: 'bottom',
+            title: 'No tienes suficiente tela para hacer una camiseta.',
+            icon: 'error',
+            toast: true,
+            showConfirmButton: false,
+            width:500,
+            timer: 1500,
+            timerProgressBar: true,
+            color: "#000000",
+            background: "#EAEAEA",
+            customClass: {
+                title: 'tituloAlerta'   
+        },
+            didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+    }
+}
+
+function clickDinero(){
+    if(camiseta >= 1){
+        camiseta -= 1;
+        dinero +=5;
+        dineroVista +=5;
+        //Hay que mejorar esto para que se actualice automático
+    }
+    else{
+        Swal.fire({
+            position: 'bottom',
+            title: 'No tienes suficientes camisetas para venderlas.',
+            icon: 'error',
+            toast: true,
+            showConfirmButton: false,
+            width:500,
+            timer: 1500,
+            timerProgressBar: true,
+            color: "#000000",
+            background: "#EAEAEA",
+            customClass: {
+                title: 'tituloAlerta'   
+        },
+            didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+    }
+}
+
 
 function clickUpgrade(objetito){
     inventario[objetito]++;
@@ -84,12 +145,14 @@ function render(){
 
     //Tela
     document.getElementById("contadorTela").innerHTML = `${telaVista} telas`;
-    document.getElementById("produccionTela").innerHTML =`${telaPorSegundo} tela / s`;
+    document.getElementById("produccionTela").innerHTML =`${telaPorSegundo} tela / segundo`;
 
     //Camisetas
-    document.getElementById("contadorCamiseta").innerHTML = `${camisetaVista} camisetas`;
-    document.getElementById("produccionCamiseta").innerHTML =`${camisetaPorSegundo} camiseta / s`;
+    document.getElementById("contadorCamiseta").innerHTML = `${camiseta} camisetas`;
+    document.getElementById("produccionCamiseta").innerHTML =`${camisetaPorSegundo} camiseta / segundo`;
     //Dinero
+    document.getElementById("contadorDinero").innerHTML = `${dinero} €`;
+    document.getElementById("produccionDinero").innerHTML =`${dineroPorSegundo} € / segundo`;
 
     //Costos
     document.getElementById("costoCursor").innerHTML = precioProducto[0];
