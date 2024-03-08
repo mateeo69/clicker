@@ -21,8 +21,9 @@ function comprar(objetito){
         inventario[objetito]++; 
         objeto -= precioProducto[objetito];
 
-        // Llama a calcularProd para actualizar porsegundos correctamente
+        // Llama a calcularProd para actualizar porsegundos correctamente y la cantidad
         calcularprod();
+        producirauto()
     }
 
     else{
@@ -51,6 +52,7 @@ function comprar(objetito){
 function producirauto(){
     for(contador = 0; contador < inventario.length; contador++){
         objeto += inventario[contador] * objetoProduce[contador];
+        // Truncamos el objeto de la vista para que sea un numero entero sin decimales
         objetoVista = Math.trunc(objeto)
     }
 }
@@ -60,12 +62,14 @@ function calcularprod(){
     for (contador = 0; contador < inventario.length; contador++){
         porsegundos += inventario[contador] * objetoProduce[contador];
     }
+    // Lo limitamos a un decimal
+    porsegundos = porsegundos.toFixed(1)
 }
 
 
 //Esta funcion recoge cada elemento HTML para unirla con el javascript
 function render(){
-    document.getElementById("contador").innerHTML = `${objetoVista} km/h`;
+    document.getElementById("contador").innerHTML = `${objetoVista} telas`;
     document.getElementById("inventario").innerHTML = 
     `Tela: ${inventario[0]}\n
     Camisetas: ${inventario[1]}\n
