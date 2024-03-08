@@ -41,40 +41,29 @@
                     </div>
                 </div>
             </div>
-            <!-- Contenedor para la parte derecha del juego (mejoras) -->
-            <div class="derecha">
-                <!-- Área para mostrar el inventario -->
-                <div id="inventario"></div>
-                <!-- Área para mostrar la producción -->
-                <div id="produccion"></div>
-            </div>
-            <!-- Contenedor para la parte izquierda del juego (opcional) -->
-            <div class="izquierda">
-                <!-- Aquí puedes agregar más elementos según sea necesario -->
-            </div>
         </section>
         
         <section class="right">
             <div id="listaCajas">
-                <div class="caja" onclick="comprar(0)">
+                <div class="caja" onclick="comprarTela(0)">
                     <img src="img/cursor.png" width="50" >
                     <div class="informacion">
-                        <p>Costo: <span id="costoCursor"></span> puntos</p>
-                        <p>Producción: <span id="produccionCursor"></span> punto/s</p>
+                        <p>Costo: <span id="costoCursor"></span> telas</p>
+                        <p>Producción: <span id="produccionCursor"></span> tela/s</p>
                     </div>
                 </div>
-                <div class="caja"  onclick="comprar(1)">
+                <div class="caja"  onclick="comprarTela(1)">
                     <img src="img/gas.png" width="50">
                     <div class="informacion">
-                        <p>Costo: <span id="costoGasolina"></span> puntos</p>
-                        <p>Producción: <span id="produccionGasolina"></span> punto/s</p>
+                        <p>Costo: <span id="costoGasolina"></span> telas</p>
+                        <p>Producción: <span id="produccionGasolina"></span> tela/s</p>
                     </div>
                 </div>
-                <div class="caja"  onclick="comprar(2)">
+                <div class="caja"  onclick="comprarTela(2)">
                     <img src="img/engine.png" width="50">
                     <div class="informacion">
-                        <p>Costo: <span id="costoEngine"></span> puntos</p>
-                        <p>Producción: <span id="produccionEngine"></span> punto/s</p>
+                        <p>Costo: <span id="costoEngine"></span> telas</p>
+                        <p>Producción: <span id="produccionEngine"></span> tela/s</p>
                     </div>
                 </div>
             </div>

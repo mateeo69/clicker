@@ -13,24 +13,27 @@ var dineroVista = 0;
 var dineroPorSegundo = 0;
 
 var inventario = [0,0,0];
-var objetoProduce = [0.1,5,10];
+var objetoProduce = [0.1,2,4];
 var precioProducto = [10,50,100];
 
 
-
+// Cuando haces click en la tela
 function clickTela(){
     tela++;
     telaVista++;
 }
 
+// Cuando haces click en la camiseta
 function clickCamiseta(){
     if(tela>=5){
         tela -= 5;
+        //Llamo a la funcion que actualiza la tela
+        actualizarTela();
+
         camiseta++;
         camisetaVista++;
-        //Hay que mejorar esto para que se actualice automático
-    }
-    else{
+
+    }else{
         Swal.fire({
             position: 'bottom',
             title: 'No tienes suficiente tela para hacer una camiseta.',
@@ -53,6 +56,7 @@ function clickCamiseta(){
     }
 }
 
+// Cuando haces click en el dinero
 function clickDinero(){
     if(camiseta >= 1){
         camiseta -= 1;
@@ -83,22 +87,16 @@ function clickDinero(){
     }
 }
 
-
-function clickUpgrade(objetito){
-    inventario[objetito]++;
-}
-
-function comprar(objetito){
+//Funcion que depende de la mejora que compre te actualiza la produccion por segundo de tela
+function comprarTela(objetito){
     if (tela >= precioProducto[objetito]) {
         inventario[objetito]++; 
         tela -= precioProducto[objetito];
 
-        // Llama a calcularProd para actualizar porsegundos correctamente y la cantidad
-        calcularprod();
-        producirauto()
-    }
+        // Llama a la funcion que actualiza la tela
+        actualizarTela()
 
-    else{
+    }else{
         Swal.fire({
             position: 'bottom',
             title: 'No tienes suficiente dinero para comprar esto.',
@@ -121,7 +119,8 @@ function comprar(objetito){
     }
 }
 
-function producirauto(){
+//Funcion que se ejecuta cada 1 segundo para producir automaticamente tela
+function producirAutoTela(){
     for(contador = 0; contador < inventario.length; contador++){
         tela += inventario[contador] * objetoProduce[contador];
         // Truncamos el objeto de la vista para que sea un numero entero sin decimales
@@ -129,14 +128,25 @@ function producirauto(){
     }
 }
 
+// Calculamos la produccion de tela por segundo que tenemos actualmente
 function calcularprod(){
-    //Calcular tela por segundos
-    telaPorSegundo = 0;
-    for (contador = 0; contador < inventario.length; contador++){
-        telaPorSegundo += inventario[contador] * objetoProduce[contador];
-    }
-    // Lo limitamos a un decimal
-    telaPorSegundo = telaPorSegundo.toFixed(1)
+
+        //Calcular tela por segundos
+        telaPorSegundo = 0;
+        for (contador = 0; contador < inventario.length; contador++){
+            telaPorSegundo += inventario[contador] * objetoProduce[contador];
+        }
+        // Lo limitamos a un decimal
+        telaPorSegundo = telaPorSegundo.toFixed(1)
+    
+    
+}
+
+/* Funcion para actualizar la tela */
+
+function actualizarTela(){
+    calcularprod();
+    producirAutoTela()
 }
 
 
@@ -150,6 +160,7 @@ function render(){
     //Camisetas
     document.getElementById("contadorCamiseta").innerHTML = `${camiseta} camisetas`;
     document.getElementById("produccionCamiseta").innerHTML =`${camisetaPorSegundo} camiseta / segundo`;
+    
     //Dinero
     document.getElementById("contadorDinero").innerHTML = `${dinero} €`;
     document.getElementById("produccionDinero").innerHTML =`${dineroPorSegundo} € / segundo`;
@@ -162,11 +173,6 @@ function render(){
     document.getElementById("costoEngine").innerHTML = precioProducto[2];
     document.getElementById("produccionEngine").innerHTML = objetoProduce[2];
 
-    //Informacion productos
-    document.getElementById("inventario").innerHTML = 
-    `Cursores: ${inventario[0]}\n
-    Gasolina: ${inventario[1]}\n
-    Motores: ${inventario[2]}`;
 }
 
 //Función extraña para que vaya refrescando el videojuego
@@ -177,6 +183,6 @@ setInterval(function(){
 },1000/FPS);
 
 setInterval(function(){
-    producirauto();
+    producirAutoTela();
 },1000)
 
