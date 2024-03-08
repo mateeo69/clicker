@@ -1,12 +1,15 @@
 var objeto = 0;
+var objetoVista = 0;
 
 var inventario = [0,0,0];
-var objetoProduce = [1,5,10];
+var objetoProduce = [0.1,5,10];
 var precioProducto = [10,50,100];
 var porsegundos = 0;
 
+
 function clickObject(){
     objeto++;
+    objetoVista++;
 }
 
 function clickUpgrade(objetito){
@@ -48,6 +51,7 @@ function comprar(objetito){
 function producirauto(){
     for(contador = 0; contador < inventario.length; contador++){
         objeto += inventario[contador] * objetoProduce[contador];
+        objetoVista = Math.trunc(objeto)
     }
 }
 
@@ -61,7 +65,7 @@ function calcularprod(){
 
 //Esta funcion recoge cada elemento HTML para unirla con el javascript
 function render(){
-    document.getElementById("contador").innerHTML = `${objeto} km/h`;
+    document.getElementById("contador").innerHTML = `${objetoVista} km/h`;
     document.getElementById("inventario").innerHTML = 
     `Tela: ${inventario[0]}\n
     Camisetas: ${inventario[1]}\n
