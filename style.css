@@ -59,9 +59,25 @@
     display: flex;
     justify-content: center;
 }
-#tela{
+.tela{
     margin-left: 25px;
 }
+.tela:hover{
+    animation: 1s click 1s;
+}
+
+@keyframes tela {
+  
+  
+    25%,  75%  {
+      transform: scale(.8);
+    }
+  
+    50% {
+      transform: scale(1.1);
+    }
+  
+  }
 
 .informacion {
     margin-left: 5px;
