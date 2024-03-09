@@ -94,7 +94,7 @@ function comprarTela(objetito){
         tela -= precioProducto[objetito];
 
         // Llama a la funcion que actualiza la tela
-        actualizarTela()
+        actualizarTela();
 
     }else{
         Swal.fire({
@@ -138,7 +138,9 @@ function calcularprod(){
         }
         // Lo limitamos a un decimal
         telaPorSegundo = telaPorSegundo.toFixed(1)
-    
+
+        //Actualiza la tela
+        
     
 }
 
@@ -146,7 +148,7 @@ function calcularprod(){
 
 function actualizarTela(){
     calcularprod();
-    producirAutoTela()
+    telaVista = Math.trunc(tela)
 }
 
 
