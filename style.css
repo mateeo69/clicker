@@ -92,6 +92,7 @@ section.upgrades{
     width: 100%;
     display: flex;
     border: 1px solid black;
+    overflow-x: auto;
 }
     section.upgrades .caja{
         margin: 4px;
