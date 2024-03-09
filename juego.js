@@ -157,15 +157,15 @@ function render(){
 
     //Tela
     document.getElementById("contadorTela").innerHTML = `${telaVista} telas`;
-    document.getElementById("produccionTela").innerHTML =`${telaPorSegundo} tela / segundo`;
+    document.getElementById("produccionTela").innerHTML =`${telaPorSegundo} tela/s`;
 
     //Camisetas
     document.getElementById("contadorCamiseta").innerHTML = `${camiseta} camisetas`;
-    document.getElementById("produccionCamiseta").innerHTML =`${camisetaPorSegundo} camiseta / segundo`;
+    document.getElementById("produccionCamiseta").innerHTML =`${camisetaPorSegundo} camiseta/s`;
     
     //Dinero
     document.getElementById("contadorDinero").innerHTML = `${dinero} €`;
-    document.getElementById("produccionDinero").innerHTML =`${dineroPorSegundo} € / segundo`;
+    document.getElementById("produccionDinero").innerHTML =`${dineroPorSegundo} €/s`;
 
     //Costos
     document.getElementById("costoCursor").innerHTML = precioProducto[0];

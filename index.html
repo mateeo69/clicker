@@ -16,16 +16,17 @@
 <body>
     <!-- Contenedor principal -->
     <main class="container">
-        <section class="left">
-            <!-- Contenedor para la parte principal del juego -->
-            <div class="productos">
+        <!-- Lado izquierdo-->
+        <section class="leftSide">
+            <!-- Productos -->
+            <section class="productos">
                 <div class="tela">                
                     <img class="telaImg" src="img/tela.png" width="150" height="150" onclick="clickTela()"/>
                     <div class="telaInfo">
                         <h1 id="contadorTela"></h1>
                         <p id="produccionTela"></p>
                     </div>
-                </div>
+                 </div>
                 <div class="camiseta">                
                     <img class="camisetaImg" src="img/camiseton.png" width="150" height="100" onclick="clickCamiseta()"/>
                     <div class="camisetaInfo">
@@ -38,36 +39,83 @@
                     <div class="dineroInfo">
                         <h1 id="contadorDinero"></h1>
                         <p id="produccionDinero"></p>
-                    </div>
+                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Compras -->
+            <section class="compras">
+                <article class="" >
+                    <button>Terreno</button>
+                    <div>
+                        <p>$2,000</p>
+                        <p>Ampliar terreno</p>
+                    </div>
+                </article>
+
+                <article class="" >
+                    <button>Terreno</button>
+                    <div>
+                        <p>$2,000</p>
+                        <p>Ampliar terreno</p>
+                    </div>
+                </article>
+
+                <article class="" >
+                    <button>Terreno</button>
+                    <div>
+                        <p>$2,000</p>
+                        <p>Ampliar terreno</p>
+                    </div>
+                </article>
+
+                <article class="" >
+                    <button>Terreno</button>
+                    <div>
+                        <p>$2,000</p>
+                        <p>Ampliar terreno</p>
+                    </div>
+                </article>
+
+                <article class="" >
+                    <button>Terreno</button>
+                    <div>
+                        <p>$2,000</p>
+                        <p>Ampliar terreno</p>
+                    </div>
+                </article>
+            </section>
         </section>
         
-        <section class="right">
-            <div id="listaCajas">
-                <div class="caja" onclick="comprarTela(0)">
-                    <img src="img/cursor.png" width="50" >
-                    <div class="informacion">
-                        <p>Costo: <span id="costoCursor"></span> telas</p>
-                        <p>Producción: <span id="produccionCursor"></span> tela/s</p>
+        
+        <!-- Lado derecho -->
+        <section class="rightSide">
+            <section class="upgrades">
+                    <div class="caja" onclick="comprarTela(0)">
+                        <img src="img/cursor.png" width="50" >
+                        <div class="informacion">
+                            <p>Costo: <span id="costoCursor"></span> telas</p>
+                            <p>Producción: <span id="produccionCursor"></span> tela/s</p>
+                        </div>
                     </div>
-                </div>
-                <div class="caja"  onclick="comprarTela(1)">
-                    <img src="img/gas.png" width="50">
-                    <div class="informacion">
-                        <p>Costo: <span id="costoGasolina"></span> telas</p>
-                        <p>Producción: <span id="produccionGasolina"></span> tela/s</p>
+                    <div class="caja"  onclick="comprarTela(1)">
+                        <img src="img/gas.png" width="50">
+                        <div class="informacion">
+                            <p>Costo: <span id="costoGasolina"></span> telas</p>
+                            <p>Producción: <span id="produccionGasolina"></span> tela/s</p>
+                        </div>
                     </div>
-                </div>
-                <div class="caja"  onclick="comprarTela(2)">
-                    <img src="img/engine.png" width="50">
-                    <div class="informacion">
-                        <p>Costo: <span id="costoEngine"></span> telas</p>
-                        <p>Producción: <span id="produccionEngine"></span> tela/s</p>
+                    <div class="caja"  onclick="comprarTela(2)">
+                        <img src="img/engine.png" width="50">
+                        <div class="informacion">
+                            <p>Costo: <span id="costoEngine"></span> telas</p>
+                            <p>Producción: <span id="produccionEngine"></span> tela/s</p>
+                        </div>
                     </div>
-                </div>
-            </div>
+            </section>
         </section>
+
+       
     </main>
 </body>
 </html>

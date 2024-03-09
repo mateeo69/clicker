@@ -10,78 +10,96 @@
     display:flex;
     justify-content: space-between;
 }
-    #inventario{
-        display: flex;
-        flex-direction: column;
-        margin-top: 30px;
-        margin-left: 30px;
-        white-space: pre-line;
-        line-height: 0.75;
-    }
-    #produccion{
-        width: 400px;
-        display: flex;
-        margin-top: 30px;
-        margin-left: 30px;
-    }
-.right{
-    width: auto;
-    display:flex;
+
+
+/* Leftside */
+.leftSide{
+    display: flex;
+    width: 30%;
     flex-direction: column;
 }
 
-.caja {
-    border: 3px solid #ccc;
-    padding: 2px;
-    margin-bottom: 5px;
-    width: 300px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
 /* Productos */
-
 .productos{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 1px solid black;
+    margin-bottom: 20px;
 }
 
 /* Selector general de todos los hijos de productos */
 
-div.productos > div {
+section.productos > div {
     width: 100%;
     display: flex;
 }
 
-    div.productos > div > img {
-        transition: transform 0.2s ease;/* Agregamos una transición para que el cambio de escala sea suave */
-    }
-
-        div.productos > div > img:active {
-            transform: scale(0.9); /* Aplicamos una escala menor cuando se hace clic */
+    section.productos > div > img {
+            transition: transform 0.2s ease;/* Agregamos una transición para que el cambio de escala sea suave */
         }
 
-    div.productos > div > div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+        section.productos > div > img:active {
+                transform: scale(0.9); /* Aplicamos una escala menor cuando se hace clic */
+            }
 
+        section.productos > div > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-/* */
-
-.informacion {
-    margin-left: 5px;
+/* Compras */
+.compras {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
 }
 
-    .informacion p {
-        margin: 5px 0;
+    .compras > article {
+        width: 100%;
+        display: flex;
+        margin-bottom: 5px;
     }
 
-        .informacion p span {
-            font-weight: bold;
-            color: rgb(240, 115, 66);
+        .compras > article > button {
+            padding: 5px 10px;
+            margin-right: 3px;
+            cursor: pointer;
         }
+
+        .compras > article > div {
+            display: flex;
+            border: 1px solid black;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 2px;
+        }
+
+/* Rightside */
+.rightSide{
+    width: 68%;
+    display: flex;
+    margin-right: 10px;
+    flex-direction: column;
+}
+
+/* Upgrades */
+section.upgrades{
+    width: 100%;
+    display: flex;
+    border: 1px solid black;
+}
+    section.upgrades .caja{
+        margin: 4px;
+        border: 1px solid black;
+    }
+    
+
+
+.informacion{
+    display: none;
+}
