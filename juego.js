@@ -25,7 +25,8 @@ function clickTela(){
 
 function clickCamiseta(){
     if(tela>=5){
-        tela -= 5;
+        telaVista -= 5;
+        tela -=5;
         camiseta++;
         camisetaVista++;
         //Hay que mejorar esto para que se actualice automático
