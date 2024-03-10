@@ -62,6 +62,7 @@ section.productos > div {
     .compras > article {
         width: 100%;
         display: flex;
+        flex-grow: 1;
         margin-bottom: 5px;
     }
 
