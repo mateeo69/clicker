@@ -9,6 +9,7 @@
 .container{
     display:flex;
     justify-content: space-between;
+    height: 100vh;
 }
 
 
@@ -95,6 +96,7 @@ section.propiedades{
     display: flex;
     border: 1px solid black;
     overflow-x: auto;
+    flex-grow: 1;
 }
 
 /* Upgrades */
