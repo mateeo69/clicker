@@ -17,6 +17,29 @@ var objetoProduce = [0.1,2,4];
 var precioProducto = [10,50,100];
 
 
+//TAB
+const option1 = document.getElementById('option1');
+const option2 = document.getElementById('option2');
+const content1 = document.getElementById('content1');
+const content2 = document.getElementById('content2');
+
+
+function changeOption (opcion){
+    if (opcion == 1) {
+        option2.classList.remove('option-active');
+        content2.classList.remove('content-active');
+        option1.classList.add('option-active');
+        content1.classList.add('content-active');
+    } else if (opcion == 2) {
+        option1.classList.remove('option-active');
+        content1.classList.remove('content-active');
+        option2.classList.add('option-active');
+        content2.classList.add('content-active');
+    }
+};
+
+
+
 // Cuando haces click en la tela
 function clickTela(){
     tela++;
