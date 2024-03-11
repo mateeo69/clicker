@@ -15,13 +15,22 @@ var dineroPorSegundo = 0;
 var inventario = [0,0,0];
 var objetoProduce = [0.1,2,4];
 var precioProducto = [10,50,100];
+    // TabPanel
+var option1 = null;
+var option2 = null;
+var content1 = null;
+var content2 = null;
 
 
 //TAB
-const option1 = document.getElementById('option1');
-const option2 = document.getElementById('option2');
-const content1 = document.getElementById('content1');
-const content2 = document.getElementById('content2');
+document.addEventListener("DOMContentLoaded", function() {
+    // Tu código aquí se ejecutará cuando la página esté completamente cargada
+    option1 = document.getElementById('option1');
+    option2 = document.getElementById('option2');
+    content1 = document.getElementById('content1');
+    content2 = document.getElementById('content2');
+
+});
 
 
 function changeOption (opcion){
