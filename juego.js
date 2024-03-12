@@ -20,10 +20,16 @@ var option1 = null;
 var option2 = null;
 var content1 = null;
 var content2 = null;
+    //Mejoras Tela
+var mejorasTela = new Set();
 
 
 //TAB
 document.addEventListener("DOMContentLoaded", function() {
+    //Construimos las mejoras de la tela
+        contrucionMejorasTela();
+
+
     //Cuando este la pagina cargada ejecutamos los set interval
 
     //Función extraña para que vaya refrescando el videojuego
@@ -223,4 +229,24 @@ function render(){
 }
 
 
+
+//DEFINICION DE CLASES
+class Mejoras {
+    producto; // 0 -> Tela / 1-> Camiseta / 2-> Dinero
+    price;
+    description;
+
+  
+    constructor(producto, price, description) {
+      this.producto = producto;
+      this.price = price;
+      this.description = description;
+    }
+  
+}
+
+function contrucionMejorasTela(){
+    const m1 = new Mejoras(0, 2000, "Aumento de parcela")
+    mejorasTela.add(m1);
+}
 
