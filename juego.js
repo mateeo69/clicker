@@ -24,6 +24,19 @@ var content2 = null;
 
 //TAB
 document.addEventListener("DOMContentLoaded", function() {
+    //Cuando este la pagina cargada ejecutamos los set interval
+
+    //Función extraña para que vaya refrescando el videojuego
+        var FPS = 30;
+
+        setInterval(function(){
+            render();
+        },1000/FPS);
+
+        setInterval(function(){
+            producirAutoTela();
+        },1000)
+
     // Tu código aquí se ejecutará cuando la página esté completamente cargada
     option1 = document.getElementById('option1');
     option2 = document.getElementById('option2');
@@ -209,14 +222,5 @@ function render(){
 
 }
 
-//Función extraña para que vaya refrescando el videojuego
-var FPS = 30;
 
-setInterval(function(){
-    render();
-},1000/FPS);
-
-setInterval(function(){
-    producirAutoTela();
-},1000)
 
