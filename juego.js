@@ -29,7 +29,6 @@ var upgradesTela = new Set();
 var upgradesCamiseta = new Set();
 var upgradesMoney = new Set();
 
-//TAB
 document.addEventListener("DOMContentLoaded", function() {
     //Cargamos los upgrades
     upgradesTela = construccionUpgradeTela();
