@@ -30,10 +30,13 @@ var upgradesCamiseta = new Set();
 var upgradesMoney = new Set();
 
 document.addEventListener("DOMContentLoaded", function() {
-    //Cargamos los upgrades
+    //Construimos los upgrades
     upgradesTela = construccionUpgradeTela();
     upgradesCamiseta = construccionUpgradeCamisetas();
     upgradesMoney = construccionUpgradeMoney();
+
+    //Llamamos a la funcion que cargue los set de upgrades en el HTML
+    cargaUpgrades(upgradesTela, upgradesCamiseta, upgradesMoney)
 
     //Cargamos las buys
     buyTela = contrucionBuyTela();
@@ -210,11 +213,12 @@ function render(){
     document.getElementById("produccionDinero").innerHTML =`${dineroPorSegundo} €/s`;
 
     //Costos
+    /*
     document.getElementById("costoCursor").innerHTML = precioProducto[0];
     document.getElementById("produccionCursor").innerHTML = objetoProduce[0];
     document.getElementById("costoGasolina").innerHTML = precioProducto[1];
     document.getElementById("produccionGasolina").innerHTML = objetoProduce[1];
     document.getElementById("costoEngine").innerHTML = precioProducto[2];
     document.getElementById("produccionEngine").innerHTML = objetoProduce[2];
-
+*/
 }

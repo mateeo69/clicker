@@ -164,8 +164,38 @@ section.upgrades{
     section.upgrades .caja{
         margin: 4px;
         border: 1px solid black;
+        min-width: 60px;
+        max-width: 60px;
+        cursor: pointer;
     }
+
+    section.upgrades .caja img{
+        width: 100%;
+    }
+    
     
 .informacion{
     display: none;
 }
+
+/* Barra de desplazamiento */
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: black transparent;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 20px;
+    border: 3px solid transparent;
+  }
