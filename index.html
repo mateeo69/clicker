@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="juego.js"></script>
+    <script src="js/cargar/cargaBuys.js"></script>
+    <script src="js/cargar/cargaUpgrades.js"></script>
+
+    <script src="js/panelTab/cargaPanelTab.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -42,51 +48,64 @@
                      </div>
                 </div>
             </section>
-
+            
             <!-- Compras -->
-            <section class="compras">
-                <article class="" >
-                    <button>Terreno</button>
-                    <div>
-                        <p>$2,000</p>
-                        <p>Ampliar terreno</p>
-                    </div>
-                </article>
 
-                <article class="" >
-                    <button>Terreno</button>
-                    <div>
-                        <p>$2,000</p>
-                        <p>Ampliar terreno</p>
-                    </div>
-                </article>
+            <div class="tab-container">
+                <ul class="options">
+                    <li id="option1" class="option option-active" onclick="changeOption(1)">Option 1</li>
+                    <li id="option2" class="option" onclick="changeOption(2)">Option 2</li>
+                </ul>
+                <div class="contents">
+                    <div id="content1" class="content content-active">
+                                <article class="" >
+                                    <button>Terreno</button>
+                                    <div>
+                                        <p>$2,000</p>
+                                        <p>Ampliar terreno</p>
+                                    </div>
+                                </article>
 
-                <article class="" >
-                    <button>Terreno</button>
-                    <div>
-                        <p>$2,000</p>
-                        <p>Ampliar terreno</p>
-                    </div>
-                </article>
+                                <article class="" >
+                                    <button>Terreno</button>
+                                    <div>
+                                        <p>$2,000</p>
+                                        <p>Ampliar terreno</p>
+                                    </div>
+                                </article>
 
-                <article class="" >
-                    <button>Terreno</button>
-                    <div>
-                        <p>$2,000</p>
-                        <p>Ampliar terreno</p>
-                    </div>
-                </article>
+                                <article class="" >
+                                    <button>Terreno</button>
+                                    <div>
+                                        <p>$2,000</p>
+                                        <p>Ampliar terreno</p>
+                                    </div>
+                                </article>
 
-                <article class="" >
-                    <button>Terreno</button>
-                    <div>
-                        <p>$2,000</p>
-                        <p>Ampliar terreno</p>
-                    </div>
-                </article>
+                                <article class="" >
+                                    <button>Terreno</button>
+                                    <div>
+                                        <p>$2,000</p>
+                                        <p>Ampliar terreno</p>
+                                    </div>
+                                </article>
+
+                                <article class="" >
+                                    <button>Terreno</button>
+                                    <div>
+                                        <p>$2,000</p>
+                                        <p>Ampliar terreno</p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div id="content2" class="content">
+
+                            </div>
+                        </div>
+                </div>
             </section>
-        </section>
-        
+    
+
         
         <!-- Lado derecho -->
         <section class="rightSide">
@@ -99,14 +118,14 @@
                         </div>
                     </div>
                     <div class="caja"  onclick="comprarTela(1)">
-                        <img src="img/upgrades/cursor1.png" width="50">
+                        <img src="img/gas.png" width="50">
                         <div class="informacion">
                             <p>Costo: <span id="costoGasolina"></span> telas</p>
                             <p>Producción: <span id="produccionGasolina"></span> tela/s</p>
                         </div>
                     </div>
                     <div class="caja"  onclick="comprarTela(2)">
-                        <img src="img/upgrades/cursor2.png" width="50">
+                        <img src="img/engine.png" width="50">
                         <div class="informacion">
                             <p>Costo: <span id="costoEngine"></span> telas</p>
                             <p>Producción: <span id="produccionEngine"></span> tela/s</p>

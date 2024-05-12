@@ -15,7 +15,52 @@ var dineroPorSegundo = 0;
 var inventario = [0,0,0];
 var objetoProduce = [0.1,2,4];
 var precioProducto = [10,50,100];
+    // TabPanel
+var option1 = null;
+var option2 = null;
+var content1 = null;
+var content2 = null;
+    //Almacenamiento Buy
+var buyTela = new Set();
+var buyCamiseta = new Set();
+var buyMoney = new Set();
+    //Almacenamiento Upgrades
+var upgradesTela = new Set();
+var upgradesCamiseta = new Set();
+var upgradesMoney = new Set();
 
+document.addEventListener("DOMContentLoaded", function() {
+    //Construimos los upgrades
+    upgradesTela = construccionUpgradeTela();
+    upgradesCamiseta = construccionUpgradeCamisetas();
+    upgradesMoney = construccionUpgradeMoney();
+
+    //Llamamos a la funcion que cargue los set de upgrades en el HTML
+    cargaUpgrades(upgradesTela, upgradesCamiseta, upgradesMoney)
+
+    //Cargamos las buys
+    buyTela = contrucionBuyTela();
+    buyCamiseta = contrucionBuyCamiseta();
+    buyMoney = construcionBuyMoney();
+
+    //Función extraña para que vaya refrescando el videojuego
+        var FPS = 30;
+
+        setInterval(function(){
+            render();
+        },1000/FPS);
+
+        setInterval(function(){
+            producirAutoTela();
+        },1000)
+
+    // Tu código aquí se ejecutará cuando la página esté completamente cargada
+    option1 = document.getElementById('option1');
+    option2 = document.getElementById('option2');
+    content1 = document.getElementById('content1');
+    content2 = document.getElementById('content2');
+
+});
 
 // Cuando haces click en la tela
 function clickTela(){
@@ -168,23 +213,12 @@ function render(){
     document.getElementById("produccionDinero").innerHTML =`${dineroPorSegundo} €/s`;
 
     //Costos
+    /*
     document.getElementById("costoCursor").innerHTML = precioProducto[0];
     document.getElementById("produccionCursor").innerHTML = objetoProduce[0];
     document.getElementById("costoGasolina").innerHTML = precioProducto[1];
     document.getElementById("produccionGasolina").innerHTML = objetoProduce[1];
     document.getElementById("costoEngine").innerHTML = precioProducto[2];
     document.getElementById("produccionEngine").innerHTML = objetoProduce[2];
-
+*/
 }
-
-//Función extraña para que vaya refrescando el videojuego
-var FPS = 30;
-
-setInterval(function(){
-    render();
-},1000/FPS);
-
-setInterval(function(){
-    producirAutoTela();
-},1000)
-

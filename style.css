@@ -1,8 +1,14 @@
 /* Reseteo de estilos */
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+/* Definir variable*/
+:root{
+    --bg-active: grey;
 }
 
 /* Contenedor principal */
@@ -22,7 +28,7 @@
 
 /* Productos */
 .productos{
-    width: 98%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,34 +58,82 @@ section.productos > div {
         }
 
 /* Compras */
-.compras {
-    width: 95%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 10px;
+
+
+.tab-container{
+    width: 100%;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, .3);
+    border-radius: 5px;
 }
 
-    .compras > article {
-        width: 100%;
-        display: flex;
+    
+    .options{
+     display: flex;
+     width: 100%;
+     list-style: none;
         flex-grow: 1;
-        margin-bottom: 5px;
+
     }
 
-        .compras > article > button {
-            padding: 5px 10px;
-            margin-right: 3px;
+        .option{
+            flex-grow: 1;
+            text-align: center;
+            line-height: 60px;
+            border: solid 2px rgba(0, 0, 0, .3);
+            color: black;
             cursor: pointer;
+            background: #585454;
         }
 
-        .compras > article > div {
-            display: flex;
-            border: 1px solid black;
-            flex-grow: 1;
-            align-items: center;
-            justify-content: space-around;
-            border-radius: 2px;
+            .option-active{
+                background: var(--bg-active);
+                border-bottom: rgba(0, 0, 0, .3);
+            }
+    
+    .contents{
+        width: 100%;
+        background: gray;
+    }
+    
+        #content1 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0px 3px
         }
+
+        .content{
+            width: 100%;
+            display: none;
+            
+        }
+
+        .content-active {
+            background: grey;
+            display: block;
+        }
+    
+            #content1 > article {
+                width: 100%;
+                display: flex;
+                flex-grow: 1;
+                margin-bottom: 5px;
+            }
+        
+                #content1 > article > button {
+                    padding: 5px 10px;
+                    margin-right: 3px;
+                    cursor: pointer;
+                }
+        
+                #content1 > article > div {
+                    display: flex;
+                    border: 1px solid black;
+                    flex-grow: 1;
+                    align-items: center;
+                    justify-content: space-around;
+                    border-radius: 2px;
+                }
 
 /* Rightside */
 .rightSide{
@@ -111,8 +165,38 @@ section.upgrades{
     section.upgrades .caja{
         margin: 4px;
         border: 1px solid black;
+        min-width: 60px;
+        max-width: 60px;
+        cursor: pointer;
     }
+
+    section.upgrades .caja img{
+        width: 100%;
+    }
+    
     
 .informacion{
     display: none;
 }
+
+/* Barra de desplazamiento */
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: black transparent;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 20px;
+    border: 3px solid transparent;
+  }
