@@ -101,7 +101,7 @@ function comprarTela(objetito){
             position: 'bottom',
             title: 'No tienes suficiente dinero para comprar esto.',
             icon: 'error',
-            toast: true,
+            toast: false,
             showConfirmButton: false,
             width:500,
             timer: 1500,

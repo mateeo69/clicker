@@ -105,7 +105,8 @@ section.upgrades{
     width: 100%;
     display: flex;
     border: 1px solid black;
-    overflow-x: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
     section.upgrades .caja{
         margin: 4px;
